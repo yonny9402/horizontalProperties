@@ -1,0 +1,12 @@
+package com.example.demo.domain.model.horizontalproperties.complex;
+
+import lombok.Data;
+import org.springframework.stereotype.Component;
+
+@Component
+@Data
+public class ComplexReponseSuccessEntity {
+
+    private ComplexEntity complexEntity;
+
+}
