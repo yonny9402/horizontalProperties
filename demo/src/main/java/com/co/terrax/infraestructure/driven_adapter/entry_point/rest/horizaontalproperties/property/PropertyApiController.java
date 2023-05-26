@@ -20,33 +20,38 @@ public class PropertyApiController {
     private final ResponseExeptionEntity responseExeptionEntity;
 
     @GetMapping("/queryAll")
+    @SuppressWarnings("unused")
     public List<PropertyEntity> getAllProperties(){
         return propertyUseCase.getAllProperties();
     }
 
-
     @GetMapping("/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<PropertyReponseSuccessEntity> getByIdProperty(@PathVariable Long id){
         return propertyUseCase.getByIdProperty(id);
     }
 
     @PostMapping()
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> createProperty(@RequestBody PropertyEntity propertyEntity){
         return propertyUseCase.createProperty(propertyEntity);
     }
 
     @DeleteMapping("/delete/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> deleteProperty(@PathVariable Long id){
         return propertyUseCase.deleteUserById(id);
     }
 
     @PutMapping("/update/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> updateExpenseById(@PathVariable Long id, @RequestBody PropertyEntity propertyEntity){
         return propertyUseCase.updatePropertyById(id, propertyEntity);
     }
 
 
     @ExceptionHandler(Exception.class)
+    @SuppressWarnings("unused")
     public ResponseEntity<ResponseExeptionEntity> handleException(Exception e) {
         responseExeptionEntity.setStatusHppt(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()));
         responseExeptionEntity.setReason("Ha ocurrido un error en la aplicación: " + e.getMessage());

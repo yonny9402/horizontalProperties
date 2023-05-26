@@ -20,33 +20,39 @@ public class OwnerApiController {
     private final ResponseExeptionEntity responseExeptionEntity;
 
     @GetMapping("/queryAll")
+    @SuppressWarnings("unused")
     public List<OwnerEntity> getAllOwner(){
         return ownerUseCase.getAllOwner();
     }
 
 
     @GetMapping("/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<OwnerReponseSuccessEntity> getByIdOwner(@PathVariable Long id){
         return ownerUseCase.getByIdOwner(id);
     }
 
     @PostMapping()
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> createOwner(@RequestBody OwnerEntity ownerEntity){
         return ownerUseCase.createOwner(ownerEntity);
     }
 
     @DeleteMapping("/delete/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> deleteOwner(@PathVariable Long id){
         return ownerUseCase.deleteOwnerById(id);
     }
 
 
     @PutMapping("/update/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> updateExpenseById(@PathVariable Long id, @RequestBody OwnerEntity ownerEntity){
         return ownerUseCase.updateOwnerById(id, ownerEntity);
     }
 
     @ExceptionHandler(Exception.class)
+    @SuppressWarnings("unused")
     public ResponseEntity<ResponseExeptionEntity> handleException(Exception e) {
         responseExeptionEntity.setStatusHppt(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()));
         responseExeptionEntity.setReason("Ha ocurrido un error en la aplicación: " + e.getMessage());

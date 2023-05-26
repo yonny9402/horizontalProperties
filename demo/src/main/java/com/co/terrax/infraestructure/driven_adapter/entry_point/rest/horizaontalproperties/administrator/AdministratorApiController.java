@@ -20,33 +20,39 @@ public class AdministratorApiController {
     private final ResponseExeptionEntity responseExeptionEntity;
 
     @GetMapping("/queryAll")
+    @SuppressWarnings("unused")
     public List<AdministratorEntity> getAllAdministrator(){
         return administratorUseCase.getAllAdministrator();
     }
 
 
     @GetMapping("/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<AdministratorReponseSuccessEntity> getByIdAdministrator(@PathVariable Long id){
         return administratorUseCase.getByIdAdministrator(id);
     }
 
     @PostMapping()
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> createAdministrator(@RequestBody AdministratorEntity administratorEntity){
         return administratorUseCase.createAdministrator(administratorEntity);
     }
 
     @DeleteMapping("/delete/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> deleteAdministrator(@PathVariable Long id){
         return administratorUseCase.deleteAdministratorById(id);
     }
 
 
     @PutMapping("/update/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> updateExpenseById(@PathVariable Long id, @RequestBody AdministratorEntity administratorEntity){
         return administratorUseCase.updateAdministratorById(id, administratorEntity);
     }
 
     @ExceptionHandler(Exception.class)
+    @SuppressWarnings("unused")
     public ResponseEntity<ResponseExeptionEntity> handleException(Exception e) {
         responseExeptionEntity.setStatusHppt(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()));
         responseExeptionEntity.setReason("Ha ocurrido un error en la aplicación: " + e.getMessage());

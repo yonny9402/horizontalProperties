@@ -20,33 +20,39 @@ public class ComplexApiController {
     private final ResponseExeptionEntity responseExeptionEntity;
 
     @GetMapping("/queryAll")
+    @SuppressWarnings("unused")
     public List<ComplexEntity> getAllComplex(){
         return complexUseCase.getAllComplex();
     }
 
 
     @GetMapping("/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<ComplexReponseSuccessEntity> getByIdComplex(@PathVariable Long id){
         return complexUseCase.getByIdComplex(id);
     }
 
     @PostMapping()
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> createComplex(@RequestBody ComplexEntity complexEntity){
         return complexUseCase.createComplex(complexEntity);
     }
 
     @DeleteMapping("/delete/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> deleteComplex(@PathVariable Long id){
         return complexUseCase.deleteComplexById(id);
     }
 
 
     @PutMapping("/update/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> updateExpenseById(@PathVariable Long id, @RequestBody ComplexEntity complexEntity){
         return complexUseCase.updateComplexById(id, complexEntity);
     }
 
     @ExceptionHandler(Exception.class)
+    @SuppressWarnings("unused")
     public ResponseEntity<ResponseExeptionEntity> handleException(Exception e) {
         responseExeptionEntity.setStatusHppt(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()));
         responseExeptionEntity.setReason("Ha ocurrido un error en la aplicación: " + e.getMessage());

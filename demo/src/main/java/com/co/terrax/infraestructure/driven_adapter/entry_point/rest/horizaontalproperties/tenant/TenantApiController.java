@@ -20,33 +20,39 @@ public class TenantApiController {
     private final ResponseExeptionEntity responseExeptionEntity;
 
     @GetMapping("/queryAll")
+    @SuppressWarnings("unused")
     public List<TenantEntity> getAllTenant(){
         return tenantUseCase.getAllTenant();
     }
 
 
     @GetMapping("/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<TenantReponseSuccessEntity> getByIdTenant(@PathVariable Long id){
         return tenantUseCase.getByIdTenant(id);
     }
 
     @PostMapping()
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> createTenant(@RequestBody TenantEntity tenantEntity){
         return tenantUseCase.createTenant(tenantEntity);
     }
 
     @DeleteMapping("/delete/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> deleteTenant(@PathVariable Long id){
         return tenantUseCase.deleteTenantById(id);
     }
 
 
     @PutMapping("/update/{id}")
+    @SuppressWarnings("unused")
     public ResponseEntity<Void> updateExpenseById(@PathVariable Long id, @RequestBody TenantEntity tenantEntity){
         return tenantUseCase.updateTenantById(id, tenantEntity);
     }
 
     @ExceptionHandler(Exception.class)
+    @SuppressWarnings("unused")
     public ResponseEntity<ResponseExeptionEntity> handleException(Exception e) {
         responseExeptionEntity.setStatusHppt(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()));
         responseExeptionEntity.setReason("Ha ocurrido un error en la aplicación: " + e.getMessage());
