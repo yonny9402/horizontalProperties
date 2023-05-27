@@ -1,19 +1,21 @@
 package com.co.terrax.presentation;
 
-import com.co.terrax.domain.model.horizontalproperties.property.PropertyReponseSuccessEntity;
-import com.co.terrax.domain.model.horizontalproperties.accountant.AccountantEntity;
-import com.co.terrax.domain.model.horizontalproperties.accountant.AccountantReponseSuccessEntity;
-import com.co.terrax.domain.model.horizontalproperties.administrator.AdministratorEntity;
-import com.co.terrax.domain.model.horizontalproperties.administrator.AdministratorReponseSuccessEntity;
-import com.co.terrax.domain.model.horizontalproperties.complex.ComplexEntity;
-import com.co.terrax.domain.model.horizontalproperties.complex.ComplexReponseSuccessEntity;
-import com.co.terrax.domain.model.horizontalproperties.employee.EmployeeEntity;
-import com.co.terrax.domain.model.horizontalproperties.employee.EmployeeReponseSuccessEntity;
-import com.co.terrax.domain.model.horizontalproperties.owner.OwnerEntity;
-import com.co.terrax.domain.model.horizontalproperties.owner.OwnerReponseSuccessEntity;
-import com.co.terrax.domain.model.horizontalproperties.property.PropertyEntity;
-import com.co.terrax.domain.model.horizontalproperties.tenant.TenantEntity;
-import com.co.terrax.domain.model.horizontalproperties.tenant.TenantReponseSuccessEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.property.PropertyReponseSuccessEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.accountant.AccountantEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.accountant.AccountantReponseSuccessEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.administrator.AdministratorEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.administrator.AdministratorReponseSuccessEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.complex.ComplexEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.complex.ComplexReponseSuccessEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.employee.EmployeeEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.employee.EmployeeReponseSuccessEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.owner.OwnerEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.owner.OwnerReponseSuccessEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.property.PropertyEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.tenant.TenantEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.admin.tenant.TenantReponseSuccessEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.finance.income.IncomeEntity;
+import com.co.terrax.domain.model.horizontalproperties.module.finance.income.IncomeReponseSuccessEntity;
 import org.springframework.http.ResponseEntity;
 
 public interface ResponseEntityPresenter{
@@ -25,5 +27,6 @@ public interface ResponseEntityPresenter{
     ResponseEntity<AdministratorReponseSuccessEntity> fromEntity(AdministratorEntity entity);
     ResponseEntity<OwnerReponseSuccessEntity> fromEntity(OwnerEntity entity);
     ResponseEntity<TenantReponseSuccessEntity> fromEntity(TenantEntity entity);
+    ResponseEntity<IncomeReponseSuccessEntity> fromEntity(IncomeEntity entity);
 
 }
